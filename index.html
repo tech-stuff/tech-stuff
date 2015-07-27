@@ -85,19 +85,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1. Backup your old <em>/etc/default/grub</em> and then open it with your favourite editor.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/default/grub /etc/default/grub.bak</span><br><span class="line">sudo emacs /etc/default/grub</span><br></pre></td></tr></table></figure></p>
-<p>2. Comment out<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=<span class="string">"quiet splash"</span></span><br></pre></td></tr></table></figure></p>
-<p>3. Add “text” to<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX=<span class="string">"text"</span></span><br></pre></td></tr></table></figure></p>
-<p>4. Uncomment<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_TERMINAL=console</span><br></pre></td></tr></table></figure></p>
-<p>5. Save, exit, and then run the following commands<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default multi-user.target</span><br></pre></td></tr></table></figure></p>
-<p>6. Now the system will boot without GUI. If you want to use GUI, run<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start lightdm</span><br></pre></td></tr></table></figure></p>
-<p>7. If you want to boot into GUI at startup, just overwrite the <em>/etc/default/grub</em> with the backup and then run<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default graphical.target</span><br></pre></td></tr></table></figure></p>
+        <p>1. Backup your old <em>/etc/default/grub</em> and then open it with your favourite editor.<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/default/grub /etc/default/grub.bak</span><br><span class="line">sudo emacs /etc/default/grub</span><br></pre></td></tr></table></figure></p>
+<p>2. Comment out<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=<span class="string">"quiet splash"</span></span><br></pre></td></tr></table></figure></p>
+<p>3. Add “text” to<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX=<span class="string">"text"</span></span><br></pre></td></tr></table></figure></p>
+<p>4. Uncomment<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GRUB_TERMINAL=console</span><br></pre></td></tr></table></figure></p>
+<p>5. Save, exit, and then run the following commands<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default multi-user.target</span><br></pre></td></tr></table></figure></p>
+<p>6. Now the system will boot without GUI. If you want to use GUI, run<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo systemctl start lightdm</span><br></pre></td></tr></table></figure></p>
+<p>7. If you want to boot into GUI at startup, just overwrite the <em>/etc/default/grub</em> with the backup and then run<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default graphical.target</span><br></pre></td></tr></table></figure></p>
 <p>Reference:<br><a href="http://askubuntu.com/questions/613698/in-ubuntu-15-04-cant-do-graphical-log-in" target="_blank" rel="external">http://askubuntu.com/questions/613698/in-ubuntu-15-04-cant-do-graphical-log-in</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/" data-id="cicl9s4aq0000tvjy7h2l00em" class="article-share-link">Share</a>
+      <a data-url="http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/" data-id="cicl9y6cg0000wijyltqz5b0w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
@@ -132,19 +132,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech-stuff.github.io/2015/07/26/hello-world/" data-id="cicl9s4bn0003tvjy7905hbxh" class="article-share-link">Share</a>
+      <a data-url="http://tech-stuff.github.io/2015/07/26/hello-world/" data-id="cicl9y6de0003wijy1knrpkak" class="article-share-link">Share</a>
       
       
     </footer>

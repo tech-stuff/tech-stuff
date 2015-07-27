@@ -6,19 +6,19 @@
   
   <title>Boot Ubuntu Without GUI | Tech-stuff</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. Backup your old /etc/default/grub and then open it with your favourite editor.12sudo cp /etc/default/grub /etc/default/grub.baksudo emacs /etc/default/grub
-2. Comment out1GRUB_CMDLINE_LINUX_DEFAULT">
+  <meta name="description" content="1. Backup your old /etc/default/grub and then open it with your favourite editor.sudo cp /etc/default/grub /etc/default/grub.baksudo emacs /etc/default/grub
+2. Comment outGRUB_CMDLINE_LINUX_DEFAULT=&quot;q">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Boot Ubuntu Without GUI">
 <meta property="og:url" content="http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/index.html">
 <meta property="og:site_name" content="Tech-stuff">
-<meta property="og:description" content="1. Backup your old /etc/default/grub and then open it with your favourite editor.12sudo cp /etc/default/grub /etc/default/grub.baksudo emacs /etc/default/grub
-2. Comment out1GRUB_CMDLINE_LINUX_DEFAULT">
+<meta property="og:description" content="1. Backup your old /etc/default/grub and then open it with your favourite editor.sudo cp /etc/default/grub /etc/default/grub.baksudo emacs /etc/default/grub
+2. Comment outGRUB_CMDLINE_LINUX_DEFAULT=&quot;q">
 <meta property="og:updated_time" content="2015-07-26T15:08:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Boot Ubuntu Without GUI">
-<meta name="twitter:description" content="1. Backup your old /etc/default/grub and then open it with your favourite editor.12sudo cp /etc/default/grub /etc/default/grub.baksudo emacs /etc/default/grub
-2. Comment out1GRUB_CMDLINE_LINUX_DEFAULT">
+<meta name="twitter:description" content="1. Backup your old /etc/default/grub and then open it with your favourite editor.sudo cp /etc/default/grub /etc/default/grub.baksudo emacs /etc/default/grub
+2. Comment outGRUB_CMDLINE_LINUX_DEFAULT=&quot;q">
   
     <link rel="alternative" href="/atom.xml" title="Tech-stuff" type="application/atom+xml">
   
@@ -87,19 +87,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1. Backup your old <em>/etc/default/grub</em> and then open it with your favourite editor.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/default/grub /etc/default/grub.bak</span><br><span class="line">sudo emacs /etc/default/grub</span><br></pre></td></tr></table></figure></p>
-<p>2. Comment out<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=<span class="string">"quiet splash"</span></span><br></pre></td></tr></table></figure></p>
-<p>3. Add “text” to<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX=<span class="string">"text"</span></span><br></pre></td></tr></table></figure></p>
-<p>4. Uncomment<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRUB_TERMINAL=console</span><br></pre></td></tr></table></figure></p>
-<p>5. Save, exit, and then run the following commands<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default multi-user.target</span><br></pre></td></tr></table></figure></p>
-<p>6. Now the system will boot without GUI. If you want to use GUI, run<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start lightdm</span><br></pre></td></tr></table></figure></p>
-<p>7. If you want to boot into GUI at startup, just overwrite the <em>/etc/default/grub</em> with the backup and then run<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default graphical.target</span><br></pre></td></tr></table></figure></p>
+        <p>1. Backup your old <em>/etc/default/grub</em> and then open it with your favourite editor.<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/default/grub /etc/default/grub.bak</span><br><span class="line">sudo emacs /etc/default/grub</span><br></pre></td></tr></table></figure></p>
+<p>2. Comment out<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=<span class="string">"quiet splash"</span></span><br></pre></td></tr></table></figure></p>
+<p>3. Add “text” to<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX=<span class="string">"text"</span></span><br></pre></td></tr></table></figure></p>
+<p>4. Uncomment<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GRUB_TERMINAL=console</span><br></pre></td></tr></table></figure></p>
+<p>5. Save, exit, and then run the following commands<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default multi-user.target</span><br></pre></td></tr></table></figure></p>
+<p>6. Now the system will boot without GUI. If you want to use GUI, run<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo systemctl start lightdm</span><br></pre></td></tr></table></figure></p>
+<p>7. If you want to boot into GUI at startup, just overwrite the <em>/etc/default/grub</em> with the backup and then run<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default graphical.target</span><br></pre></td></tr></table></figure></p>
 <p>Reference:<br><a href="http://askubuntu.com/questions/613698/in-ubuntu-15-04-cant-do-graphical-log-in" target="_blank" rel="external">http://askubuntu.com/questions/613698/in-ubuntu-15-04-cant-do-graphical-log-in</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/" data-id="cicl9s4aq0000tvjy7h2l00em" class="article-share-link">Share</a>
+      <a data-url="http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/" data-id="cicl9y6cg0000wijyltqz5b0w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
