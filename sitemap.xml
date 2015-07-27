@@ -1,36 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
+  
   <url>
     <loc>http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/</loc>
     <lastmod>2015-07-26T15:08:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>Boot Ubuntu Without GUI</title>
-        <pubTime>2015-07-26T14:31:51.000Z</pubTime>
-        
-        <tag>Ubuntu </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://tech-stuff.github.io/2015/07/26/hello-world/</loc>
     <lastmod>2015-07-26T14:02:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2015-07-26T14:02:36.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
+  </url>
+  
 </urlset>
