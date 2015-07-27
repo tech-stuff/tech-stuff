@@ -4,21 +4,24 @@
   <meta name="google-site-verification" content="puxXQDpndnC7NTTwczL8_rtuaU5RWa6TCG1rdDJ7lQg" />
   <meta charset="utf-8">
   
-  <title>Boot Ubuntu Without GUI | Tech-stuff</title>
+  <title>在一台电脑上使用两个github账户 | Tech-stuff</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. Backup your old /etc/default/grub and then open it with your favourite editor.sudo cp /etc/default/grub /etc/default/grub.baksudo emacs /etc/default/grub
-2. Comment outGRUB_CMDLINE_LINUX_DEFAULT=&quot;q">
+  <meta name="description" content="1. 生成新的ssh-key保存的时候，输入一个新的文件名，如：id_rsa_secondssh-keygen -t rsa -C &quot;your_email@example.com&quot;
+2. 添加key到ssh-agent （每次重启之后都要执行这句）ssh-add ~/.ssh/id_rsa_second
+如果出现错误 Could not open a connection to your auth">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Boot Ubuntu Without GUI">
-<meta property="og:url" content="http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/index.html">
+<meta property="og:title" content="在一台电脑上使用两个github账户">
+<meta property="og:url" content="http://tech-stuff.github.io/2015/07/27/2github/index.html">
 <meta property="og:site_name" content="Tech-stuff">
-<meta property="og:description" content="1. Backup your old /etc/default/grub and then open it with your favourite editor.sudo cp /etc/default/grub /etc/default/grub.baksudo emacs /etc/default/grub
-2. Comment outGRUB_CMDLINE_LINUX_DEFAULT=&quot;q">
-<meta property="og:updated_time" content="2015-07-26T15:08:51.000Z">
+<meta property="og:description" content="1. 生成新的ssh-key保存的时候，输入一个新的文件名，如：id_rsa_secondssh-keygen -t rsa -C &quot;your_email@example.com&quot;
+2. 添加key到ssh-agent （每次重启之后都要执行这句）ssh-add ~/.ssh/id_rsa_second
+如果出现错误 Could not open a connection to your auth">
+<meta property="og:updated_time" content="2015-07-27T14:29:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Boot Ubuntu Without GUI">
-<meta name="twitter:description" content="1. Backup your old /etc/default/grub and then open it with your favourite editor.sudo cp /etc/default/grub /etc/default/grub.baksudo emacs /etc/default/grub
-2. Comment outGRUB_CMDLINE_LINUX_DEFAULT=&quot;q">
+<meta name="twitter:title" content="在一台电脑上使用两个github账户">
+<meta name="twitter:description" content="1. 生成新的ssh-key保存的时候，输入一个新的文件名，如：id_rsa_secondssh-keygen -t rsa -C &quot;your_email@example.com&quot;
+2. 添加key到ssh-agent （每次重启之后都要执行这句）ssh-add ~/.ssh/id_rsa_second
+如果出现错误 Could not open a connection to your auth">
   
     <link rel="alternative" href="/atom.xml" title="Tech-stuff" type="application/atom+xml">
   
@@ -65,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Boot-Ubuntu-Without-GUI" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2github" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/07/26/Boot-Ubuntu-Without-GUI/" class="article-date">
-  <time datetime="2015-07-26T14:31:51.000Z" itemprop="datePublished">2015-07-26</time>
+    <a href="/2015/07/27/2github/" class="article-date">
+  <time datetime="2015-07-27T13:59:44.000Z" itemprop="datePublished">2015-07-27</time>
 </a>
     
   </div>
@@ -79,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Boot Ubuntu Without GUI
+      在一台电脑上使用两个github账户
     </h1>
   
 
@@ -87,22 +90,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1. Backup your old <em>/etc/default/grub</em> and then open it with your favourite editor.<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/default/grub /etc/default/grub.bak</span><br><span class="line">sudo emacs /etc/default/grub</span><br></pre></td></tr></table></figure></p>
-<p>2. Comment out<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX_DEFAULT=<span class="string">"quiet splash"</span></span><br></pre></td></tr></table></figure></p>
-<p>3. Add “text” to<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GRUB_CMDLINE_LINUX=<span class="string">"text"</span></span><br></pre></td></tr></table></figure></p>
-<p>4. Uncomment<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GRUB_TERMINAL=console</span><br></pre></td></tr></table></figure></p>
-<p>5. Save, exit, and then run the following commands<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default multi-user.target</span><br></pre></td></tr></table></figure></p>
-<p>6. Now the system will boot without GUI. If you want to use GUI, run<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo systemctl start lightdm</span><br></pre></td></tr></table></figure></p>
-<p>7. If you want to boot into GUI at startup, just overwrite the <em>/etc/default/grub</em> with the backup and then run<br><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo update-grub</span><br><span class="line">sudo systemctl <span class="built_in">set</span>-default graphical.target</span><br></pre></td></tr></table></figure></p>
-<p>Reference:<br><a href="http://askubuntu.com/questions/613698/in-ubuntu-15-04-cant-do-graphical-log-in" target="_blank" rel="external">http://askubuntu.com/questions/613698/in-ubuntu-15-04-cant-do-graphical-log-in</a></p>
+        <p>1. 生成新的ssh-key<br>保存的时候，输入一个新的文件名，如：id_rsa_second<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure></p>
+<p>2. 添加key到ssh-agent （每次重启之后都要执行这句）<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa_second</span><br></pre></td></tr></table></figure></p>
+<p>如果出现错误 <em>Could not open a connection to your authentication agent.</em>, 先执行<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">eval</span> `ssh-agent <span class="operator">-s</span>`</span><br></pre></td></tr></table></figure></p>
+<p>3. 添加public key到github</p>
+<p>4. 修改 <em>~/.ssh/config</em><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">	HostName github.com</span><br><span class="line">	IdentityFile ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">Host github_second</span><br><span class="line">	HostName github.com</span><br><span class="line">	IdentityFile ~/.ssh/id_rsa_second</span><br></pre></td></tr></table></figure></p>
+<p>5. 使用别名pull/push，如<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github_second:username/reponame</span><br></pre></td></tr></table></figure></p>
+<p>6. 为每个账户配置对应的email/name<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 取消global</span></span><br><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置每个repo的email/name</span></span><br><span class="line">git config  user.email <span class="string">"xxxx@xx.com"</span></span><br><span class="line">git config  user.name <span class="string">"xxxx"</span></span><br></pre></td></tr></table></figure></p>
+<p>Reference:<br><a href="http://blog.lessfun.com/blog/2014/06/11/two-github-account-in-one-client/" target="_blank" rel="external">http://blog.lessfun.com/blog/2014/06/11/two-github-account-in-one-client/</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/" data-id="cicm0cnhn00043djyz83jj04v" class="article-share-link">Share</a>
+      <a data-url="http://tech-stuff.github.io/2015/07/27/2github/" data-id="cicm0cngm00003djyh3tktzkc" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
 
     </footer>
   </div>
@@ -110,19 +113,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/27/2github/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          在一台电脑上使用两个github账户
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/26/Boot-Ubuntu-Without-GUI/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Boot Ubuntu Without GUI</div>
     </a>
   
 </nav>
