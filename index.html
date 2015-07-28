@@ -63,6 +63,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-shadowsocks-on-ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/28/shadowsocks-on-ubuntu/" class="article-date">
+  <time datetime="2015-07-28T04:16:47.000Z" itemprop="datePublished">2015-07-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/28/shadowsocks-on-ubuntu/">在Ubuntu使用shadowsocks客户端</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1. 安装shadowsocks客户端。可以安装有GUI的版本，或者纯命令行版本<br>安装GUI版本：Shadowsocks-Qt5<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure></p>
+<p>纯命令行版本推荐go版本，单文件，下载解压就ok。打开下面的网页下载对应版本（local的32或64位）<br><a href="http://dl.chenyufei.info/shadowsocks/latest/" target="_blank" rel="external">http://dl.chenyufei.info/shadowsocks/latest/</a></p>
+<p>2. 配置shadowsocks。<br>go版本配置文件模板<br><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        "<span class="attribute">server</span>":<span class="value"><span class="string">"your_server_ip"</span></span>,</span><br><span class="line">        "<span class="attribute">server_port</span>":<span class="value"><span class="string">"your_server_port"</span></span>,</span><br><span class="line">        "<span class="attribute">local_port</span>":<span class="value"><span class="string">"your_local_port"</span></span>,</span><br><span class="line">        "<span class="attribute">password</span>":<span class="value"><span class="string">"password"</span></span>,</span><br><span class="line">        "<span class="attribute">timeout</span>":<span class="value"><span class="number">600</span></span>,</span><br><span class="line">        "<span class="attribute">method</span>":<span class="value"><span class="string">"aes-256-cfb"</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Qt5版本配置类似，local_host项填 127.0.0.1</p>
+<p>3. 配置好后运行，go版本在terminal运行<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">shadowsocks_executable_path -c config_file_path</span><br></pre></td></tr></table></figure></p>
+<p>Qt5版本直接点connect就ok</p>
+<p>4. 此时用chrome和firefox打开网页可能会发现ip地址仍然没有变，原因是还要在浏览器里设置proxy。我的chrome proxy设置打开错误，只能用firefox了。<br>firefox要安装autoproxy<a href="https://addons.mozilla.org/zh-cn/firefox/addon/autoproxy/" target="_blank" rel="external"><em>(点我打开下载)</em></a>插件，然后添加一个proxy</p>
+<p><table border="1"><tr><th style="text-align:center">name</th><th style="text-align:center">host</th><th style="text-align:center">port</th></tr><tr><td style="text-align:center">shadowsocks</td><td style="text-align:center">127.0.0.1</td><td style="text-align:center"><i>your_local_port</i></td></tr></table><br>意思是监听local_host的<em>your_local_port</em>端口，记得还要勾选socks5</p>
+<p>5. That’s it! Well done!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://tech-stuff.github.io/2015/07/28/shadowsocks-on-ubuntu/" data-id="cicmv3ohn00050ajyqd4o22st" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2github" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/27/2github/" class="article-date">
@@ -97,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech-stuff.github.io/2015/07/27/2github/" data-id="cicm0cngm00003djyh3tktzkc" class="article-share-link">Share</a>
+      <a data-url="http://tech-stuff.github.io/2015/07/27/2github/" data-id="cicmv3ogn00000ajycjlxae25" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
@@ -143,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/" data-id="cicm0cnhn00043djyz83jj04v" class="article-share-link">Share</a>
+      <a data-url="http://tech-stuff.github.io/2015/07/26/Boot-Ubuntu-Without-GUI/" data-id="cicmv3ohq00070ajy5lspty5q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
@@ -190,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech-stuff.github.io/2015/07/26/hello-world/" data-id="cicm0cnhl00033djy1a2ko1nd" class="article-share-link">Share</a>
+      <a data-url="http://tech-stuff.github.io/2015/07/26/hello-world/" data-id="cicmv3ohp00060ajyd8amgzh2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,7 +274,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -239,6 +284,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/07/28/shadowsocks-on-ubuntu/">在Ubuntu使用shadowsocks客户端</a>
+          </li>
         
           <li>
             <a href="/2015/07/27/2github/">在一台电脑上使用两个github账户</a>
